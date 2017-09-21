@@ -13,9 +13,13 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "firebase": "^4.3.1",
+    "particles.js": "^2.0.0",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
-    "vuetify": "^0.15.7"
+    "vuelidate": "^0.5.0",
+    "vuetify": "^0.15.7",
+    "vuex": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

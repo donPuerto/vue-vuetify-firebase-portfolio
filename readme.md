@@ -5,20 +5,27 @@
 
 
 ## Todo 
-
 ``` 
-- [ ] Project upgrade added with unit test
-- [X] Adding development Branch
+Priority
+- [ ] Adding development Branch
+- [ ] Refactoring on Vuex storage
+- [ ] Creating Profile, Contact, and Users Component
 
+Less Priority
+- [ ] Kanban Board using HTML5 Drag and Drop
+- [ ] Adding Particles using particles.js
+- [ ] Setting up unit test for components and Vuex storage
 ```
+
+## Work in Progress
+- [x] Project upgrade added with unit test "done" - 21/09/2017
+- [X] Merging old Template "done" - 21/09/2017
+- [x] Synchronizing Storage and Vuex state "done" - 9/15/2017
+- [x] Adding "Activity Board" menu "done" - 9/15/2017
 
 
 ## Project Plan  
-
 ``` 
-
-- [ ] Kanban Board `priority` :shipit:
-- [ ] Particles
-- [ ] Profile, Contact, User Component `priority` :heart_eyes:
-
+- [ ] Profile, Contact, User Component
 ```
+
