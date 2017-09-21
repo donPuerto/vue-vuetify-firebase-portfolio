@@ -5,14 +5,14 @@
 > A [Vue.js](https://vuejs.org/), [Vuetify](https://vuetifyjs.com/), and [Firebase](https://firebase.google.com/) project
 
 
-## Live Demo Below
-Click Here! [My Portfolio](https://vuejs.org/), :facepunch: :facepunch: :facepunch: :facepunch:
+## Live demo below
+Click Here! [My Portfolio](https://dp-portfolio.firebaseapp.com), :facepunch: :facepunch: :facepunch: :facepunch:
 
 
 ## Todo 
 Priority
 - [ ] Adding development Branch  - `Start Date: 20/09/2017 - End Date:`
-- [ ] Deploying to Firebase - `"Start Date:": 21/09/2017 - End Date:`
+- [X] Deploying to Firebase - `"Start Date:": 21/09/2017 - End Date: 21/09/2017:`
 - [ ] Refactoring on Vuex storage - `Start Date: 21/09/2017 - End Date:`
 - [ ] Creating Profile, Contact, and Users Component - `Start Date: 17/09/2017 - End Date:`
 - [ ] Cleaning Homepage - `Start Date: 21/09/2017 - End Date:`
