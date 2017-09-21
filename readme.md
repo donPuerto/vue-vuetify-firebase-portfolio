@@ -3,14 +3,12 @@
 > A [Vue.js](https://vuejs.org/), [Vuetify](https://vuetifyjs.com/), and [Firebase](https://firebase.google.com/) project
 
 ## Live Demo Below
-```
-[Vue.js](https://vuejs.org/), click here...
+click here... [My Portfolio](https://vuejs.org/), :smile:
 
-```
 
 ## Todo 
 Priority
-- [ ] Adding development Branch
+- [ ] Adding development Branch 
 - [ ] Deploying to Firebase
 - [ ] Refactoring on Vuex storage
 - [ ] Creating Profile, Contact, and Users Component
