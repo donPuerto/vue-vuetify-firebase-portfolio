@@ -1,9 +1,12 @@
 # vue-vuetify-firebase-portfolio
-
+```
+   Best portfolio ever :)
+```
 > A [Vue.js](https://vuejs.org/), [Vuetify](https://vuetifyjs.com/), and [Firebase](https://firebase.google.com/) project
 
+
 ## Live Demo Below
-click here... [My Portfolio](https://vuejs.org/), :smile:
+Click Here! [My Portfolio](https://vuejs.org/), :facepunch: :facepunch: :facepunch: :facepunch:
 
 
 ## Todo 
