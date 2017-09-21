@@ -4,19 +4,21 @@
 
 
 
-# Todo 
+## Todo 
 
 ``` 
 - [ ] Project upgrade added with unit test
-- [x] Adding development Branch
+- [X] Adding development Branch
 
 ```
 
-# Project Plan 
+
+## Project Plan  
 
 ``` 
+
 - [ ] Kanban Board `priority` :shipit:
 - [ ] Particles
-- [ ] Profile, Contact, User Component `priority` :+1:
+- [ ] Profile, Contact, User Component `priority` :heart_eyes:
 
 ```
