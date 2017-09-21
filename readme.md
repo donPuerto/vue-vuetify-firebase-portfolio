@@ -30,6 +30,9 @@ Less Priority
 
 
 ## Project Plan  
+- [ ] Full Functional CMS
+- [ ] Full Calender/Event Scheduling 
+- [ ] Quotation component
 
 
 
