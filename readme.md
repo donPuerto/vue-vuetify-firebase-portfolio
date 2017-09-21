@@ -2,8 +2,11 @@
 
 > A [Vue.js](https://vuejs.org/), [Vuetify](https://vuetifyjs.com/), and [Firebase](https://firebase.google.com/) project
 
-## Live Demo
-Click here...
+## Live Demo Below
+```
+[Vue.js](https://vuejs.org/), click here...
+
+```
 
 ## Todo 
 Priority
