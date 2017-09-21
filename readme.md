@@ -2,12 +2,13 @@
 
 > A [Vue.js](https://vuejs.org/), [Vuetify](https://vuetifyjs.com/), and [Firebase](https://firebase.google.com/) project
 
-
+## Live Demo
+Click here...
 
 ## Todo 
-``` 
 Priority
 - [ ] Adding development Branch
+- [ ] Deploying to Firebase
 - [ ] Refactoring on Vuex storage
 - [ ] Creating Profile, Contact, and Users Component
 
@@ -15,7 +16,7 @@ Less Priority
 - [ ] Kanban Board using HTML5 Drag and Drop
 - [ ] Adding Particles using particles.js
 - [ ] Setting up unit test for components and Vuex storage
-```
+
 
 ## Work in Progress
 - [x] Project upgrade added with unit test "done" - 21/09/2017
@@ -25,7 +26,6 @@ Less Priority
 
 
 ## Project Plan  
-``` 
-- [ ] Profile, Contact, User Component
-```
+
+
 
