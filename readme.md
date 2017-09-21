@@ -4,15 +4,15 @@
 
 
 
-## Todo 
+# Todo 
 
 ``` 
 - [ ] Project upgrade added with unit test
-- [ ] Adding development Brance
+- [x] Adding development Branch
 
 ```
 
-## Project Plan 
+# Project Plan 
 
 ``` 
 - [ ] Kanban Board `priority` :shipit:
