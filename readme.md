@@ -11,31 +11,34 @@ Click Here! [My Portfolio](https://vuejs.org/), :facepunch: :facepunch: :facepun
 
 ## Todo 
 Priority
-- [ ] Adding development Branch  - "When Todo:" 20/09/2017
-- [ ] Deploying to Firebase - "When Todo:" 21/09/2017
-- [ ] Refactoring on Vuex storage - "When Todo:" 21/09/2017
-- [ ] Creating Profile, Contact, and Users Component - "When Todo:" 17/09/2017
-- [ ] Cleaning Homepage - "When Todo:" 21/09/2017
+- [ ] Adding development Branch  - `Start Date: 20/09/2017 - End Date:`
+- [ ] Deploying to Firebase - `"Start Date:": 21/09/2017 - End Date:`
+- [ ] Refactoring on Vuex storage - `Start Date: 21/09/2017 - End Date:`
+- [ ] Creating Profile, Contact, and Users Component - `Start Date: 17/09/2017 - End Date:`
+- [ ] Cleaning Homepage - `Start Date: 21/09/2017 - End Date:`
 
 Less Priority
-- [ ] Kanban Board using HTML5 Drag and Drop - "When Todo:" 17/09/2017
-- [ ] Adding Particles using particles.js - "When Todo:" 17/09/2017
 - [ ] Setting up unit test for components and Vuex storage - "When Todo:" 20/09/2017
 
 
 ## Work in Progress
-- [x] Project upgrade added with unit test "done:" - 21/09/2017
-- [X] Merging old Template "done:" - 21/09/2017
-- [x] Synchronizing Storage and Vuex state "done:" - 9/15/2017
-- [x] Adding "Activity Board" menu "done:" - 9/15/2017
+- [ ] Adding Particles using particles.js - `Start Date: 17/09/2017`
+- [ ] Kanban Board using HTML5 Drag and Drop - `Start Date: 17/09/2017`
+
+
+## Project Completion Status
+- [x] Project upgrade added with unit test - `Start Date: 20/09/2017 - End Date: 21/09/2017`
+- [X] Merging old Template - `Start Date: 21/09/2017 - End Date: 21/09/2017`
+- [x] Synchronizing Storage and Vuex state - `Start Date: 15/09/2017 - End Date: 21/09/2017`
+- [x] Adding "Activity Board" menu - `Start Date: 15/09/2017 - End Date: 21/09/2017`
 
 
 ## Project Plan  
-- [ ] Full Functional CMS - "Date Planned:" 21/9/2017
-- [ ] Full Calender/Event Scheduling  "Date Planned:" 21/9/2017
-- [ ] Quotation component "Date Planned:" 21/9/2017
-- [ ] Synchronize with other plaform - Electron and Vue Electron "Date Planned:" 21/9/2017
-- [ ] Synchronize with other plaforms- Quassar Framework "Date Planned:" 21/9/2017
+- [ ] Full Functional CMS - `Plan Date: 21/9/2017`
+- [ ] Full Calender/Event Scheduling - `Plan Date: 21/9/2017`
+- [ ] Quotation component - `Plan Date: 21/9/2017`
+- [ ] Synchronize with other plaform - Electron and Vue Electron `Plan Date: 21/9/2017`
+- [ ] Synchronize with other plaform - Quassar Framework - `Plan Date: 21/9/2017`
 
 
 
