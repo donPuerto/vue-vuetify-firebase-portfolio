@@ -55,3 +55,21 @@ export const Mutate_Clear_Alert_Message = (state) => {
 export const Mutate_Profile_Message = (state, rootState) => {
   //console.log('rootState', rootState)
 }
+
+
+
+/**
+ * Navigation Sidebar
+ * 
+ */
+export const Mutation_Left_SideBar = (state,payload) => {
+  console.log('payload',payload)
+  state.navSidebars[0].leftsidebar = payload
+  //console.log('Mutation_Left_SideBar', payload)
+}
+
+export const Mutation_On_Click_Left_SideBar = (state, mutations) => {
+  console.log('hit',mutations)
+  
+  
+}

@@ -5,7 +5,7 @@ import AuthGuard from './auth-guard.js'
 import Home from '@/components/Home'
 import Admin  from '@/components/Pages/CMS/Admin'
 
-import ActivityBoard from '@/components/customs/ActivityBoard'
+import ActivityBoard from '@/components/Customs/ActivityBoard'
 import Profile from '@/components/Pages/Users/Profile'
 import CreateProfile from '@/components/Pages/Users/Create'
 import Projects from '@/components/Pages/Projects/Project'

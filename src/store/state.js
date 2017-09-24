@@ -11,6 +11,12 @@ let syncedData = {
 let notSyncedData = {
     loading: false,
     alertMessage: null,
+    toolbar: [
+        {title: 'DONPUERTO'}
+    ],
+    navSidebars: [
+        { leftsidebar: false}
+    ]
 }
 
 

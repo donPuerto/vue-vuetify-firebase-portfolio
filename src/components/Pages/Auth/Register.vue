@@ -1,5 +1,5 @@
 <template>
-  <div class="register">
+  <div class="registerComponent">
     <v-container>
       <v-layout row class="mb-1" v-if="alertMessage">
         <v-flex xs12 sm10 offset-sm1 md6 offset-md3 lg5 offset-lg4 xl4 offset-xl4 >
@@ -101,7 +101,7 @@ import { required, maxLength, email, sameAs, minLength, alphaNum   } from 'vueli
 import { mapGetters, mapActions } from 'Vuex'
 
 export default {
-  name: 'Register',
+  name: 'RegisterComponent',
   mixins: [validationMixin],
   validations: {
     email: { required, email },
@@ -183,7 +183,7 @@ export default {
   computed: {
     ...mapGetters({
       alertMessage: 'GetterAlertMessage',
-      loading: 'GetterLoading',
+      //loading: 'GetterLoading',
       user: 'GetterFirebaseUser'
     }),
 

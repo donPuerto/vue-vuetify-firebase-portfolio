@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="loginComponent">
     <v-container>
       <v-layout row class="mb-1" v-if="alertMessage">
         <v-flex xs12 sm10 offset-sm1 md6 offset-md3 lg5 offset-lg4 xl4 offset-xl4 >
@@ -108,7 +108,7 @@ import { validationMixin } from 'vuelidate'
 import { required, email   } from 'vuelidate/lib/validators'
 import { mapGetters, mapActions } from 'Vuex'
 export default {
-  name: 'Login',
+  name: 'LoginComponent',
   mixins: [validationMixin],
   validations: {
     email: { required, email },
@@ -135,7 +135,7 @@ export default {
     },
 
     ...mapActions({
-      login: 'ActionLogin',
+      loginUser: 'ActionLogin',
       clearAlertMessage: 'ActionClearAlertMessage',
     }),
 
@@ -143,7 +143,7 @@ export default {
       if(this.email != "" && this.password != "") {
         this.loadingState = true
 
-        this.login({ email: this.email, password: this.password})
+        this.loginUser({ email: this.email, password: this.password})
         .then( (res) => {
           //console.log(res)
           if(res === 'Authenticated and Verified User'){
@@ -177,7 +177,7 @@ export default {
   computed: {
     ...mapGetters({
       alertMessage: 'GetterAlertMessage',
-      loading: 'GetterLoading',
+      //loading: 'GetterLoading',
       user: 'GetterFirebaseUser'
     }),
 

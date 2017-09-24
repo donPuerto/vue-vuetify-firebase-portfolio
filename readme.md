@@ -34,7 +34,7 @@ Less Priority
 
 
 ## Project Plan  
-- [ ] Full Functional CMS - `Plan Date: 21/9/2017`
+- [ ] Full Functional CRM - `Plan Date: 21/9/2017`
 - [ ] Full Calender/Event Scheduling - `Plan Date: 21/9/2017`
 - [ ] Quotation component - `Plan Date: 21/9/2017`
 - [ ] Synchronize with other plaform - Electron and Vue Electron `Plan Date: 21/9/2017`

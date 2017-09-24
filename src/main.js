@@ -8,12 +8,11 @@ import store from './store'
 import * as firebase from 'firebase'
 
 
+
 //Customize Components
-import Toolbar27MAY2017 from '@/components/shared/Toolbars/Toolbar27MAY2017'
-import LeftSideSidebar from '@/components/shared/NavigationBars/LeftSideBar'
-import RightSideSidebar from '@/components/shared/NavigationBars/RightSideBar'
+import MainToolbar from '@/components/shared/Toolbars/MainToolbar_1'
 import AlertComponent from './components/Shared/Alerts/Alert'
-import ActivityBoard from './components/customs/ActivityBoard'
+
 
 //Plugins
 import Vuelidate from 'vuelidate'
@@ -34,12 +33,11 @@ Vue.config.productionTip = false
 Vue.component('app-alert', AlertComponent);
  
 //Toolbars
-Vue.component('main-toolbar', Toolbar27MAY2017)
+Vue.component('main-toolbar', MainToolbar)
 
 
 //Navbars
-Vue.component('main-left-sidebar', LeftSideSidebar)
-Vue.component('main-right-sidebar', RightSideSidebar)
+
 
 
 /* eslint-disable no-new */

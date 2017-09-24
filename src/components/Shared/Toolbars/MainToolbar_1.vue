@@ -1,9 +1,9 @@
 <template>
-     <div class="Toolbar27MAY2017">
+    <div class="mainToolbar">
         
         <v-navigation-drawer
             temporary
-            v-model="sidebar"
+            v-model="leftSidebarSetter"
             light
             absolute
             >
@@ -13,7 +13,7 @@
                     <v-list-tile-action>
                         <v-icon>home</v-icon>
                     </v-list-tile-action>
-                    
+                   
                     <v-list-tile-content>
                         <v-list-tile-title>Home</v-list-tile-title>
                     </v-list-tile-content>
@@ -32,13 +32,13 @@
                 <!-- Toolbar Side Icon -->
                 <v-toolbar-side-icon 
                     class="hidden-sm-and-up" 
-                    @click.stop="sidebar = !sidebar"
+                    @click.stop="onClickleftSidebar"
                 ></v-toolbar-side-icon>
                 
             
                 <!-- Toolbar Title -->
                 <v-toolbar-title>
-                    <router-link to='/' tag="span" style="cursor: pointer">{{ toolbar[0].title}}</router-link> 
+                    <router-link to='/' tag="span" style="cursor: pointer">{{ toolbarTitle }}</router-link> 
                 </v-toolbar-title>
 
 
@@ -113,9 +113,9 @@
 </div>                
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
-    name: 'Toolbar27MAY2017',
+    name: 'mainToolbar',
     data () {
         return {
             toolbar: [
@@ -142,21 +142,50 @@ export default {
         } // return 
     }, //data
 
-    methods: {}, // method
+    methods: {
+        ...mapMutations({
+            setleftSidebar: 'Mutation_Left_SideBar',
+            onClickleftSidebar: 'Mutation_On_Click_Left_SideBar'
+        }),
 
-    computed: {}, // computed
+       
+
+    }, // method
+
+    computed: {
+
+        ...mapGetters({
+            toolbarTitle: 'GetterToolbarTitle',
+            leftSidebar: 'GetterLeftSidebar',
+        }),
+
+        leftSidebarSetter: {
+            get() {
+                return this.leftSidebar;
+            },
+            set( value ) {
+                console.log('val',value)
+                this.setleftSidebar(value)
+            }
+        }
+
+
+    
+    }, // computed
 
 
     mounted () {
-        console.log('Toolbar Vue', this.sidebar)
-        //console.log('drawer', this.drawer)
-        window.onscroll = function (e) {  
-            if(window.scrollY > 1 ) {
-                console.log('hit')
-            } else {
-                
-            } 
-        }
+        console.log('Toolbar Vue')
+        console.log('Sidebar', this.leftSidebar)
+        // window.onscroll = function (e) {  
+        //     if(window.scrollY > 1 ) {
+        //         console.log('hit')
+        //     } else {
+        //         console.log('hit')
+        //     } 
+        // },
+
+
     }// mounted
 }
 </script>

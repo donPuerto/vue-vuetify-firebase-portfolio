@@ -33,30 +33,6 @@
           </div>
 
         
-          <div>
-            <h5>Work in Progress</h5>
-            <ul>
-              <li style='text-decoration:line-through;'>Synchronizing Storage and Vuex state 9/15/2017</li>
-              <li>Handling firebase user cookies expiration 9/15/2017 - To be delayed (no enough information) will come back soon</li>
-              <li>Handling auto Sign in 9/15/2017 - To be delayed, since it is correlated to cookies expiration</li>
-              <li style='text-decoration:line-through;'>Adding "Activity Board" menu 9/15/2017</li>
-              <li>Will Work on CRUD for User, Address, and Profile - 17/09/2017</li>
-            </ul>  
-            <br>
-            <h5>Future Work Plan</h5>
-            <ul>
-              <li>Handling Activity or Kanban Board *<code>priority</code>*</li>
-            </ul>
-
-            <br>
-            <h5>Working with Apps</h5>
-            <ul>
-              <li>Electron and Vue Electron 16/9/2017</li>
-            </ul>    
-          </div>
-
-
-
         </v-flex>
       </v-layout>
 
