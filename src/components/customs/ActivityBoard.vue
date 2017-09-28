@@ -1,18 +1,68 @@
 <template>
   <div class="activityBoard">
     <v-container fluid >
-      <v-layout row justify-space-between style="padding:10px">
-        <v-flex xs3>
-          <v-card dark class="primary">
-            <v-card-text>Unit Testing</v-card-text>
-          </v-card>
-        </v-flex>
+      <v-layout row wrap justify-space-between style="padding: 3px">
 
-        <v-flex xs3>
-          <v-card dark class="secondary">
-           <v-card-text>two</v-card-text>
-          </v-card>
-        </v-flex>
+
+          <v-dialog v-model="dialog" lazy absolute  width="30%">
+            <v-btn secondary dark slot="activator">Select</v-btn>
+            <v-card>
+              <v-card-title>
+                <div class="headline">Categories</div>
+              </v-card-title>
+              <v-card-text>
+                
+                <v-tabs dark v-model="active" :scrollable="false">
+                  <v-tabs-bar secondary>
+                    <v-tabs-item
+                      v-for="tab in tabs"
+                      :key="tab"
+                      :href="'#' + tab"
+                      ripple
+                    >
+                      {{tab }}
+                    </v-tabs-item>
+                    <v-tabs-slider class="secondary"></v-tabs-slider>
+                  </v-tabs-bar>
+
+                  <v-tabs-items>
+                    <v-tabs-content
+                      v-for="tab in tabs"
+                      :key="tab"
+                      :id="tab"
+                    >
+                      <v-card flat>
+                        <v-card-text v-if="tab == 'Select'" style="padding:0" class="pt-4" flat>
+                          <v-select v-bind:items="dropdown_edit" label="Select" editable item-value="text"
+                            style=" -webkit-box-shadow: none;
+                                    -moz-box-shadow: none;
+                                     box-shadow: none;"    
+
+                           
+                          ></v-select>
+                        </v-card-text>
+
+                        <v-card-text v-else>
+                          <h1>Create</h1>
+                        </v-card-text>
+                      </v-card>
+                    </v-tabs-content>
+                  </v-tabs-items>
+
+                </v-tabs>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+              <v-btn class="green--text darken-1" flat="flat" @click.native="onLoadCategory">Load</v-btn>
+                <v-btn class="green--text darken-1" flat="flat" @click.native="dialog = false">Close</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+          
+          <v-btn>Create</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn>Settings</v-btn>
+        
       </v-layout>
 
       <v-layout row class="drag-container">
@@ -40,52 +90,7 @@
         </v-flex>
         
       </v-layout>
-      <v-speed-dial
-        v-model="fab"
-        :top="top"
-        :bottom="bottom"
-        :right="right"
-        :left="left"
-        :direction="direction"
-        :hover="hover"
-        :transition="transition"
-      >
-      <v-btn
-        slot="activator"
-        class="blue darken-2"
-        dark
-        fab
-        hover
-        v-model="fab"
-      >
-        <v-icon>account_circle</v-icon>
-        <v-icon>close</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        dark
-        small
-        class="green"
-      >
-        <v-icon>edit</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        dark
-        small
-        class="indigo"
-      >
-        <v-icon>add</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        dark
-        small
-        class="red"
-      >
-        <v-icon>delete</v-icon>
-      </v-btn>
-    </v-speed-dial>
+     
     </v-container>
    
   </div>
@@ -97,17 +102,25 @@ export default {
   name: 'ActivityBoard',
   data () {
     return {
-      //Fab Icon
-      fab: false,
-      top: false,
-      right: false,
-      bottom: true,
-      left: true,
-      direction: "left",
+      //dialog
+      dialog: false,
+
+
+      //tab
+      tabs: ['Select', 'Create'],
+      active: null,
+      
+      //Dropdown Button
+      dropdown_edit: [
+          { text: 'Unit Testing' },
+          { text: 'New Component' },
+          
+        ],
+
 
 
       category: ['unit-test'],
-      stages: ['on-hold', 'in-progress','on-hold', 'in-progress','on-hold', 'in-progress'],
+      stages: ['on-hold', 'in-progress','on-hold', 'in-progress'],
       blocks: [
         {
           id: 1,
@@ -132,6 +145,11 @@ export default {
 
 
   methods: {
+    //dialog
+    onLoadCategory () {
+      this.dialog = false;
+    },
+    //dialog
     readBlocks(status) {
       return this.blocks.filter(block => block.status === status);
     },
@@ -182,6 +200,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+.layout {
+  flex: none !important;
+}
+
 $ease-out: all .3s cubic-bezier(0.23, 1, 0.32, 1);
 
 

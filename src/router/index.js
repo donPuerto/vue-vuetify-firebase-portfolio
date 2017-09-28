@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import AuthGuard from './auth-guard.js'
 
 import Home from '@/components/Home'
-import Admin  from '@/components/Pages/CMS/Admin'
+import Admin  from '@/components/Pages/CRM/Admin'
 
 import ActivityBoard from '@/components/Customs/ActivityBoard'
 import Profile from '@/components/Pages/Users/Profile'
@@ -70,13 +70,15 @@ export default new Router({
     {
       path: '/profile',
       name: 'Profile',
-      component: Profile
+      component: Profile,
+      // beforeEnter: AuthGuard,
     },
 
     {
       path: '/profile/create',
       name: 'CreateProfile',
-      component: CreateProfile
+      component: CreateProfile,
+      // beforeEnter: AuthGuard,
     },
 
     {

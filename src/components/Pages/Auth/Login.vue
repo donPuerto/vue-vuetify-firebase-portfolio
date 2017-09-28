@@ -127,6 +127,15 @@ export default {
   }, //data
 
   methods: {
+    onRegister () {
+      this.$router.push('/register');
+    },
+
+
+    onSubmitForgotPassword () {
+      this.$router.push('/password-reset');
+    },
+
     onDismissed (){
       //console.log('Dismissed Alert')
       this.clearAlertMessage();
@@ -137,19 +146,13 @@ export default {
     ...mapActions({
       loginUser: 'ActionLogin',
       clearAlertMessage: 'ActionClearAlertMessage',
+      passwordReset: 'ActionPasswordReset'
     }),
 
     onSubmit() {
       if(this.email != "" && this.password != "") {
         this.loadingState = true
-
         this.loginUser({ email: this.email, password: this.password})
-        .then( (res) => {
-          //console.log(res)
-          if(res === 'Authenticated and Verified User'){
-            this.$router.push('/admin')
-          }
-        })
       }
 
       return 
@@ -224,7 +227,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .signin {
-
-  }
 </style>
