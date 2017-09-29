@@ -76,7 +76,7 @@ export default {
 
   mounted () {
      console.log('Home Vue')
-     this.$store.dispatch('test')
+  
   }, // mounted
 
 }
