@@ -125,7 +125,7 @@ export default {
             menus: [
                 { text: 'Home', icon: 'home', tooltip: [{html: 'home' }], link: '/' },
                 { text: 'Activity Board', icon: 'assignment_ind', tooltip: [{html: 'activity board' }], link: '/activity-board' },
-                { text: 'Profile', icon: 'person', tooltip: [{html: 'profile' }], link: '/profile' },
+                { text: 'Profile', icon: 'person', tooltip: [{html: 'profile' }], link: '/user/profile' },
                 { text: 'Projects', icon: 'business_center', tooltip: [{html: 'projects' }], link: '/projects' },
                 { text: 'News Feed', icon: 'book', tooltip: [{html: 'news feed' }], link: '/newsfeed' },
                 

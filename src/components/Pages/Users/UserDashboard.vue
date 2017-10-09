@@ -1,12 +1,12 @@
 <template>
-  <div class="profile">
-     <h1>Profile</h1>
+  <div class="userDashboard">
+     <h1>User Index</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Profile',
+  name: 'UserDashboard',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -18,14 +18,14 @@ export default {
 
   },
   mounted (){
-    console.log('Profile Vue')
+    console.log('User Dashboard Vue')
   } //mounted
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .profile {
+  .userProfile {
 
   }
 </style>

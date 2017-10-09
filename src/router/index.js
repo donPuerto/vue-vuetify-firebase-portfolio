@@ -7,8 +7,9 @@ import Admin  from '@/components/Pages/CRM/Admin'
 
 import ActivityBoard from '@/components/Pages/ActivityBoard/ActivityBoard'
 import ActivityBoardDashboard from '@/components/Pages/ActivityBoard/ActivityBoardDashboard'
-import Profile from '@/components/Pages/Users/Profile'
-import CreateProfile from '@/components/Pages/Users/Create'
+
+
+
 import Projects from '@/components/Pages/Projects/Project'
 import NewsFeed from '@/components/Pages/NewsFeed/NewsFeed'
 import E404 from '@/components/Pages/Errors/404'
@@ -20,6 +21,12 @@ import Register from '@/components/Pages/Auth/Register'
 import PasswordReset from '@/components/Pages/Auth/PasswordReset'
 
 
+//users 
+import UserDashboard from '@/components/Pages/Users/UserDashboard'
+import UserCreate from '@/components/Pages/Users/UserCreate'
+import ComponentA from '@/components/Pages/Users/ComponentA'
+
+
 
 Vue.use(Router)
 
@@ -29,6 +36,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+
+    {
+      path: '/test',
+      name: 'ComponentA',
+      component: ComponentA
     },
     
     {
@@ -77,16 +90,16 @@ export default new Router({
 
 
     {
-      path: '/profile',
-      name: 'Profile',
-      component: Profile,
+      path: '/user/profile',
+      name: 'UserDashboard',
+      component: UserDashboard,
       // beforeEnter: AuthGuard,
     },
 
     {
-      path: '/profile/create',
-      name: 'CreateProfile',
-      component: CreateProfile,
+      path: '/user/create',
+      name: 'UserCreate',
+      component: UserCreate,
       // beforeEnter: AuthGuard,
     },
 

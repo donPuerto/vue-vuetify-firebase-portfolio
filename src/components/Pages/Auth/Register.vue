@@ -141,12 +141,7 @@ export default {
         this.loadingState = true
 
         this.registerUser({email: this.email, password: this.password})
-          .then( (res)=> {
-              console.log('res', res)
-              if(res === 'Created user successfully') {
-                this.$router.push('/login')
-              }
-          })
+     
       }
       return 
       

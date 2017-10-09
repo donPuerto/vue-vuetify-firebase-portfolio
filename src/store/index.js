@@ -13,7 +13,7 @@ import plugins from './plugins'
 
 
 import SharedSettings from './modules/shared'
-import Profile from './modules/profile'
+import Users from './modules/users'
 
 export default new Vuex.Store({
   state,
@@ -23,7 +23,7 @@ export default new Vuex.Store({
   plugins,
   modules: {
     SharedSettings,
-    Profile,
+    Users,
   },
   //strict: debug,
   //plugins: debug ? [createLogger()] : []

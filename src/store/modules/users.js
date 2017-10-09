@@ -1,7 +1,8 @@
 import * as firebase from 'firebase'
+import * as api from '@/helpers/api/firebase'
 
 /**
- * Profile
+ * User
  * 
  */
 
@@ -28,12 +29,15 @@ const mutations = {
 
 // actions
 const actions = {
-   ActionMessage ({ commit}, payload ) {
-     commit('MutateMessage', payload )
-   },
 
-   ActionCreateProfile ({ commit}, payload ) {
+  ActionCreateProfile ({ state, commit, rootState}, payload ) {
       console.log('Create Profile', payload)
+      // if(rootState != null) {
+        
+      //   let obj = Object.assign(payload,rootState.firebaseUser)
+      //   // /api.Write(obj)
+      //   console.log(obj)
+      // }
 
    }
  }
