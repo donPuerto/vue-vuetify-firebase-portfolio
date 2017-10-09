@@ -1,6 +1,6 @@
 import * as firebase from 'firebase'
 import router from '@/router'
-import * as api from '@/api/firebase'
+import * as api from '@/helpers/api/firebase'
 
 
 /**
@@ -16,11 +16,10 @@ export const ActionRegisterUser = ({commit}, payload) => {
     commit('Mutate_Loading', true)
     commit('Mutate_Clear_Alert_Message')
  
-  
-    return firebase.auth().createUserWithEmailAndPassword( payload.email, payload.password )
+    api.Register(payload)
         .then( (firebaseUser) => {
             //console.log('firebaseUser', firebaseUser)
-            firebase.auth().currentUser.sendEmailVerification().then( ()=> {
+            firebaseUser.sendEmailVerification().then( ()=> {
                 /**
                  * Success Stage
                  */    
@@ -31,7 +30,7 @@ export const ActionRegisterUser = ({commit}, payload) => {
                     icon: 'check_circle'
                 })
 
-                
+                router.push('/login')
             
             }).catch(function(error) {
                 commit('Mutate_Loading', true)
@@ -42,7 +41,7 @@ export const ActionRegisterUser = ({commit}, payload) => {
                 })
             })   
             
-            return 'Created user successfully'
+            
         
         })
         .catch ( (error) => {
@@ -114,14 +113,17 @@ export const ActionLogin = ({commit, dispatch}, payload) => {
 
 // logout
 export const ActionLogout = ({commit}) => {
+
     commit('Mutate_Loading', true)
     commit('Mutate_Clear_Alert_Message')
-    console.log('Logout')
-    firebase.auth().signOut().then(function(user) {
-        //console.log('Sign-out successful.')
-        commit('Mutate_Firebase_Authenticated_User', null)
-        commit('Mutate_Clear_Sync_Storage')
-        router.push('/')
+    //console.log('Logout')
+  
+    api.Logout()
+        .then(function(user) {
+        
+            commit('Mutate_Firebase_Authenticated_User', null)
+            commit('Mutate_Clear_Sync_Storage')
+            router.push('/')
 
         }).catch(function(error) {
             commit('Mutate_Loading', true)
@@ -133,7 +135,7 @@ export const ActionLogout = ({commit}) => {
     });
       
         
-} //logout
+} // logout
 
 
 
@@ -143,30 +145,30 @@ export const ActionLogout = ({commit}) => {
 export const ActionPasswordReset = ({commit, dispatch}, payload) => {
     commit('Mutate_Loading', true)
     commit('Mutate_Clear_Alert_Message')
-
-    var auth = firebase.auth();
-    var emailAddress = payload;
+   
+   
+    api.PasswordReset(payload)
     
-    auth.sendPasswordResetEmail(emailAddress).then(function() {
-        /**
-         * Success Stage
-         */    
-        commit('Mutate_Loading', false)
-        commit('Mutate_Alert_Message', {
-            status: 'success', 
-            message: 'Sent link to your email for password reset', 
-            icon: 'check_circle'
-        })
-        router.push('/login')
+        .then(function() {
+            /**
+             * Success Stage
+             */    
+            commit('Mutate_Loading', false)
+            commit('Mutate_Alert_Message', {
+                status: 'success', 
+                message: 'Sent link to your email for password reset', 
+                icon: 'check_circle'
+            })
+            router.push('/login')
 
-    }).catch(function(error) {
-      // An error happened.
-      commit('Mutate_Loading', false)
-      commit('Mutate_Alert_Message', {
-          status: 'error', 
-          message: error.message,
-          icon: 'error_outline'
-      })
+            }).catch(function(error) {
+            // An error happened.
+            commit('Mutate_Loading', false)
+            commit('Mutate_Alert_Message', {
+                status: 'error', 
+                message: error.message,
+                icon: 'error_outline'
+            })
     });
 } // Password Reset
 
@@ -174,21 +176,15 @@ export const ActionPasswordReset = ({commit, dispatch}, payload) => {
 
 
 
-
-
-
-
-
-    
-
-
+// Action Auth State Change
 export const ActionAuthStateChange = ({commit },payload) => {
     commit('Mutate_Loading', false)
     commit('Mutate_Clear_Alert_Message')
     commit('Mutate_Firebase_Authenticated_User',payload)
-    console.log('ActionAuthStateChange')
+    //console.log('ActionAuthStateChange')
     
-} //ActionAuthStateChange
+} // Action Auth State Change
+
 
 
 
