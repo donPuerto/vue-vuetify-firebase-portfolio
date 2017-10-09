@@ -15,6 +15,7 @@ Click Here! [My Portfolio](https://dp-portfolio.firebaseapp.com), :facepunch: :f
 ## Todo 
 Priority
 - [ ] To Store to firebase the Contact Module - `Start Date: 09/10/2017 - End Date:`
+- [ ] ES Lint integration ;) - `Start Date: 09/10/2017 - End Date:`
 - [ ] Conduct Query test for Contact Module - `Start Date: 09/10/2017 - End Date:`
 - [ ] To Store Kanban Board data into Firebase - `Start Date: 24/09/2017 - End Date:`
 
@@ -23,7 +24,7 @@ Priority
 Less Priority
 - [ ] Setting up unit test for components and Vuex storage - "When Todo:" 20/09/2017
 - [ ] Adding official unit test  - "When Todo:" 09/10/2017
-- [ ] Adding official unit test  - "When Todo:" 09/10/2017
+- [ ] check travis integration  - "When Todo:" 09/10/2017
 
 
 ## Work in Progress
