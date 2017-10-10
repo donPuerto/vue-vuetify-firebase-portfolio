@@ -1,7 +1,5 @@
-import * as firebase from 'firebase'
 import router from '@/router'
 import * as api from '@/helpers/api/firebase'
-
 
 /**
  * 

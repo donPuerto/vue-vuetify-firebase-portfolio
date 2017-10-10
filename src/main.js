@@ -36,28 +36,15 @@ Vue.component('app-alert', AlertComponent);
 Vue.component('main-toolbar', MainToolbar)
 
 
-
-
-
 //Navbars
-export const defaultAppConfig =  {
-  apiKey: "AIzaSyB0xS8hCnmyGQcYM53T_bB3MUHPndZshUs",
-  authDomain: "dp-portfolio.firebaseapp.com",
-  databaseURL: "https://dp-portfolio.firebaseio.com",
-  projectId: "dp-portfolio",
-  storageBucket: "dp-portfolio.appspot.com",
-  messagingSenderId: "679574357287"
-
-}
-
 
 
 // Firebase Initialization
-var defaultApp = firebase.initializeApp(defaultAppConfig);
+firebase.initializeApp(api.defaultAppConfig);
 
 
 
-const unsubscribe = defaultApp.auth().onAuthStateChanged((firebaseUser) => {
+const unsubscribe = firebase.auth().onAuthStateChanged((firebaseUser) => {
   
   /* eslint-disable no-new */
   new Vue({
@@ -94,7 +81,7 @@ const unsubscribe = defaultApp.auth().onAuthStateChanged((firebaseUser) => {
           emailVerified: firebaseUser.emailVerified,
           displayName: firebaseUser.displayName,
           phoneNumber: firebaseUser.phoneNumber,
-          phoneUrl: firebaseUser.phoneUrl,
+          photoURL: firebaseUser.photoURL,
           //disabled: false   // true for disabled; false for enabled.
          
         }
