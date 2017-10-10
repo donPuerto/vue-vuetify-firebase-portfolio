@@ -32,16 +32,41 @@ const actions = {
 
   ActionCreateProfile ({ state, commit, rootState}, payload ) {
       console.log('Create Profile', payload)
-      // if(rootState != null) {
-        
-      //   let obj = Object.assign(payload,rootState.firebaseUser)
-      //   // /api.Write(obj)
-      //   console.log(obj)
-      // }
+      console.log('state', rootState.firebaseUser.uid)
+      
+      var user = firebase.auth().currentUser;
+     
+      console.log('user before',user)
+      if( user.displayName === null || user.phoneNumber === null || user.photoURL === null || user.email === null  ) {
+        user.updateProfile({
+          displayName: payload.userDetails.firstName + ' ' + payload.userDetails.lastName,
+          phoneNumber: payload.userDetails.phone1,
+          photoURL: payload.userDetails.photoURL,
+          email: payload.userDetails.email,
+        }).then(function() {
+          console.log('Update successful')
+        }).catch(function(error) {
+          // An error happened.
+          console.log('Update error')
+        });
+      }
+      console.log('user after',user)
+      console.log('payload',payload)
+     
+      //Add User
+
+      // var database = firebase.database();
+
+      // database.ref('/users').push(payload["0"].userDetails)
+      // database.ref('/address').push(payload["1"].userDetails)
 
    }
  }
  
+ 
+
+
+
  //Export File
  export default {
    namespaced: true,

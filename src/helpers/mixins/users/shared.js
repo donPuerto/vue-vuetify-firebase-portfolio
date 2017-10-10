@@ -33,9 +33,10 @@ export const UserSharedSettingMixin = {
 
       
       onSubmit() {
-         this.$v.$touch()
-         
-         let user = {
+        this.$v.$touch()
+
+        let obj1 = {
+          userDetails: {
             firstName: this.firstName,
             middleName: this.middleName,
             lastName: this.lastName,
@@ -44,17 +45,26 @@ export const UserSharedSettingMixin = {
             phone2: this.phone2,
             fax1: this.fax1,
             fax2: this.fax2,
+          }
+        }
+        
+        let obj2 = {
+          address: {
             streetAddress1: this.streetAddress1,
             streetAddress2: this.streetAddress2,
             state: this.state,
             city: this.city,
             postalCode: this.postalCode,
             country: this.country,
-         }
-
+          }
+        }
+            
+        
+        
+     
          if(this.firstName != "" && this.email != "") {
             this.loadingState = true
-            this.createProfile(user)
+            this.createProfile(Object.assign(obj1,obj2))
          
          } //if
 

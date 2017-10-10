@@ -13,11 +13,11 @@ export const defaultAppConfig =  {
 
 }
 
-
+// firebase.initializeApp(defaultAppConfig);
 // var database = firebase.database();
 
 
-// Write 
+//Write 
 // export const Write = (payload) => {
    
 //    database.ref('users').push(payload)
