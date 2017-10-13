@@ -22,9 +22,9 @@ import PasswordReset from '@/components/Pages/Auth/PasswordReset'
 
 
 //users 
-import UserDashboard from '@/components/Pages/Users/UserDashboard'
-import UserCreate from '@/components/Pages/Users/UserCreate'
-import ComponentA from '@/components/Pages/Users/ComponentA'
+import UserProfile from '@/components/Pages/Users/UserIndex'
+import UserUpdate from '@/components/Pages/Users/UserUpdate'
+import ComponentA from '@/components/Tests/ComponentA'
 
 
 
@@ -91,15 +91,15 @@ export default new Router({
 
     {
       path: '/user/profile',
-      name: 'UserDashboard',
-      component: UserDashboard,
+      name: 'UserProfile',
+      component: UserProfile,
       // beforeEnter: AuthGuard,
     },
 
     {
-      path: '/user/create',
-      name: 'UserCreate',
-      component: UserCreate,
+      path: '/user/update',
+      name: 'UserUpdate',
+      component: UserUpdate,
       // beforeEnter: AuthGuard,
     },
 

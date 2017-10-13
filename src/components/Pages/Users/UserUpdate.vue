@@ -1,15 +1,38 @@
 <template>
    <div class="userCreate">
-      
+     
+
+
       <v-container fluid>
-        <v-layout row wrap style="overflow-x: scroll;">
+        <snackbar-app
+          :snackbar="snackbar.snackbar"
+          :message="snackbar.message"
+          :timeout="snackbar.timeout"
+          :multiline="snackbar.multiline"
+          :layout="snackbar.layout"
+          :top="snackbar.top"
+          :bottom="snackbar.bottom"
+          :right="snackbar.right"
+          :left="snackbar.left"
+          :color="snackbar.color"
+          @dismissed="onDismissed"
+        ></snackbar-app>  
+
+        <v-layout style=" justify-content: flex-center;" fill-height v-if="loading">
+          <v-flex style="flex: none; margin: auto; ">
+              <v-progress-circular indeterminate v-bind:size="60" class="black--text"></v-progress-circular>
+          </v-flex>
+        </v-layout>
+
+  
+        <v-layout row wrap style="overflow-x: scroll;" v-if="!loading">
           <v-flex xs12>
             <v-card style="min-width: 1012px; ">
               <v-toolbar class="grey darken-1" dark="dark" prominent="prominent" flat="flat">
                 <span class="pr-1">
                   <v-icon dark medium right>person</v-icon>
                 </span>
-                <div class="headline">Add new user</div>
+                <div class="headline">Create user</div>
               </v-toolbar>
               <v-card-text >
                 <!-- Save Button -->
@@ -31,12 +54,6 @@
                       </span>
                     </v-btn>
 
-                    <v-btn 
-                      class="white mt-0 mb-0 ml-0 mr-2"
-                    >
-                      Save & Add Another Contact
-                    </v-btn>
-
                     
                     <v-btn 
                       dark 
@@ -46,14 +63,7 @@
                     
                     
                     <v-spacer></v-spacer>
-                    <v-btn 
-                      dark 
-                      class="secondary mt-0 mb-0 ml-0 mr-2"
-                    >
-                      Clone
-                    </v-btn>
-
-                    
+                                    
                     <v-btn 
                       class="mt-0 mb-0 ml-0 mr-0"
                       dark 
@@ -63,8 +73,9 @@
                 </v-layout>
                 <!-- Save Button -->
                 
-               
-                <form> <!-- Form -->
+                
+                <!-- Form -->
+                <form> 
                 <v-layout row wrap>
                   <v-flex xs12>
                     <v-expansion-panel expand>
@@ -72,9 +83,9 @@
                         <v-expansion-panel-content  v-bind:value="true">
                           <div slot="header"><strong>USER DETAIL</strong> </div>
                           <v-card>
-                           
+                            {{ userInformation}}
                             <v-card-text class="grey lighten-3" style="overflow-y: scroll;">  <!-- Card Text -->
-
+                            
                                   
                               <!-- First Name, Middle Name, Last Name -->
                               <v-layout row >
@@ -86,7 +97,7 @@
                                     @input="$v.firstName.$touch()"
                                     @blur="$v.firstName.$touch()"
                                     type="text"
-                                    required
+                               
                                   ></v-text-field>
                                 </v-flex>
 
@@ -124,7 +135,7 @@
                                     :error-messages="emailErrors"
                                     @input="$v.email.$touch()"
                                     @blur="$v.email.$touch()"
-                                    required
+                                   
                                   ></v-text-field>
                                 </v-flex>
                               </v-layout>
@@ -140,7 +151,7 @@
                                     :error-messages="phone1Errors"
                                     @input="$v.phone1.$touch()"
                                     @blur="$v.phone1.$touch()"
-                                    required
+                                   
                                   ></v-text-field>
                                 </v-flex>
                             
@@ -344,14 +355,13 @@
 </template>
 
 <script>
-
 import places from 'places.js';
-
-
 import { EventBus } from '../../../helpers/utilities';
 import { UserSharedSettingMixin }  from '../../../helpers/mixins/users/shared'
 import { UserDetailsMixin }  from '../../../helpers/mixins/users/user-detail'
 import { AddressMixin }  from '../../../helpers/mixins/users/address'
+import Snackbar from '../../Shared/Snackbars/SnackbarContextual'
+import {mapGetters, mapActions,mapMutations} from 'vuex'
 
 
 export default {
@@ -361,6 +371,9 @@ export default {
       UserDetailsMixin, 
       AddressMixin
   ],
+  components: {
+    'snackbar-app': Snackbar
+  },
   
   data () {
     return {
@@ -368,8 +381,7 @@ export default {
       loader: null,
       loadingState: false,
 
-      userTemp: 'temp',
-
+   
 
       //Company Details
       //company: '',
@@ -378,22 +390,73 @@ export default {
       //Educational Attainment
       //Skills
       
+    
+     
     } //return 
   }, //data
 
 
   
   methods: {
+    onDismissed (){
+      console.log('Dismissed Alert')
+      //this.snackbar = false
+      
+    },
+
+    ...mapMutations({
+      userDetails: 'Users/MutateUserDetails',
+      userAddress: 'Users/MutateUserAddress'
+    }),
 
   }, //method
 
   
+  computed: {
+    ...mapGetters({
+      loading: 'GetterLoading',
+      snackbar: "GetterSnackbarSetup",
+      userInformation: "Users/GettersUserInformation"
+      
+    }),
+  },
 
-  
+  created () {
+    
+    //Populate User
+    // if(this.userInformation.userAddress === null && this.userInformation.userDetails === null ) {
+      
+    //   console.log('hit me 1.......')
+    //   // setTimeout( ()=>{
+    //   // //set records
+    //   // //this.firstName = 'hello world'
+    //   // this.firstName = this.userInformation.userDetails.firstName
+    //   // this.middleName = this.userInformation.userDetails.middleName
+    //   // this.lastName = this.userInformation.userDetails.lastName
+    //   // this.email = this.userInformation.userDetails.email
+    //   // this.phone1 = this.userInformation.userDetails.phone1
+    //   // this.phone2 = this.userInformation.userDetails.phone2
+    //   // this.fax1 = this.userInformation.userDetails.fax1
+    //   // this.fax2 = this.userInformation.userDetails.fax2
+    //   // this.streetAddress1 = this.userInformation.userAddress.streetAddress1
+    //   // this.streetAddress2 = this.userInformation.userAddress.streetAddress2
+    //   // this.state = this.userInformation.userAddress.state
+    //   // this.city = this.userInformation.userAddress.city
+    //   // this.postalCode = this.userInformation.userAddress.postalCode
+    //   // this.country = this.userInformation.userAddress.country
+    //   // }, 6000)
+   
+    // } else {
+    //   console.log('hit me 2>>>>>>>')
+    // }
+    
+  },
 
 
   mounted (){
-      console.log('Create Profile Vue')
+    this.populateUser()
+    
+    console.log('Create Profile Vue')
   } //mounted
 
 } //export default

@@ -11,6 +11,18 @@ let syncedData = {
 let notSyncedData = {
     loading: false,
     alertMessage: null,
+    snackbarSetup: {
+        snackbar: false,
+        message: 'snackbar message...',
+        timeout: 600000,
+        multiline: true,
+        layout: false,
+        top:true,
+        bottom:false,
+        right:true,
+        left:false,
+        color:'success'
+    },
     toolbar: [
         {title: 'DONPUERTO'}
     ],

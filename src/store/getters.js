@@ -29,6 +29,18 @@ export const GetterAlertMessage = (state) => {
 
 
 /**
+ * Snackbar Default Settings
+ * Top, Right
+ * Multiline 
+ * Layout - Horizaontal
+ * 
+ */
+export const GetterSnackbarSetup = (state) => {
+  return state.snackbarSetup
+}
+
+
+/**
  * Toolbar
  * 
  */
