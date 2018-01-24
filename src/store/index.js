@@ -1,30 +1,44 @@
+// core
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
-//const debug = process.env.NODE_ENV !== 'production'
-
-import { state } from './state'
-import * as getters from './getters'
-import * as mutations from './mutations'
+// Vuex state
 import * as actions from './actions'
-import plugins from './plugins'
 
 
+// modules
+import * as template from './modules/template'
 
-import SharedSettings from './modules/shared'
-import Users from './modules/users'
 
-export default new Vuex.Store({
-  state,
-  getters,
-  mutations,
-  actions,
-  plugins,
-  modules: {
-    SharedSettings,
-    Users,
-  },
-  //strict: debug,
-  //plugins: debug ? [createLogger()] : []
+//plugins
+import createPersistedState from 'vuex-persistedstate'
+
+const key = 'myVuex';
+const vuexLocalStorage = createPersistedState({
+   key: key,
+   paths: [],
+   storage: {
+      getItem: key => window.localStorage.getItem(key),
+      setItem: (key, state) => window.localStorage.setItem(key, state, { expires: 1, secure: false }),
+      removeItem: key => window.localStorage.removeItem(key)
+   },
+   reducer: state => ({
+      template: state.template.message2
+   }),
+});
+
+Vue.use(Vuex)
+const debug = process.env.NODE_ENV !== 'production'
+const store = new Vuex.Store({
+   plugins: [vuexLocalStorage],
+   strict: debug,
+   actions,
+   modules: {
+      template,
+   }
+  
 })
+
+
+export default store
+

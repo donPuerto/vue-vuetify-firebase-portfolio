@@ -1,4 +1,4 @@
-# vue-vuetify-firebase-portfolio
+# Vue Vuetify Firebase Portfolio
 ```
    Best portfolio ever :)
 ```
@@ -10,54 +10,36 @@ Click Here! [My Portfolio](https://dp-portfolio.firebaseapp.com), :facepunch: :f
 
 
 ## Last Update Status
-- 09/10/2017
-
-## Todo 
-Priority
-- [ ] To Store to firebase the Contact Module - `Start Date: 09/10/2017 - End Date:`
-- [ ] ES Lint integration ;) - `Start Date: 09/10/2017 - End Date:`
-- [ ] Conduct Query test for Contact Module - `Start Date: 09/10/2017 - End Date:`
-- [ ] To Store Kanban Board data into Firebase - `Start Date: 24/09/2017 - End Date:`
+- 24/01/2018
 
 
+## Installed dependencies
+core
+- [Vue](https://vuejs.org/) npm install --save vue@latest
+- [Router](https://router.vuejs.org/en/) npm install --save vue-router
+- [Vuex](https://vuex.vuejs.org/en/) npm install --save vuex
+- [Vue Test Utils](https://vue-test-utils.vuejs.org/en/) npm install --save-dev @vue/test-utils
+- [Eslint Plugin Vue](https://vue-test-utils.vuejs.org/en/) npm install --save-dev eslint eslint-plugin-vue
 
-Less Priority
-- [ ] Setting up unit test for components and Vuex storage - "When Todo:" 20/09/2017
-- [ ] Adding official unit test  - "When Todo:" 09/10/2017
-- [ ] check travis integration  - "When Todo:" 09/10/2017
 
-
-## Work in Progress
-- [ ] Creating Profile, Contact, and Users Component - `Start Date: 17/09/2017 - End Date:`
-- [ ] Adding Particles using particles.js - `Start Date: 17/09/2017`
-- [ ] Kanban Board using HTML5 Drag and Drop - `Start Date: 17/09/2017`
-- [ ] Basic structure of Kanban Board partially completed - `Start Date: 24/09/2017`
-- [ ] Refactoring Kanban structure - `Start Date: 24/09/2017`
+external
+- [Vuetify](https://next.vuetifyjs.com/getting-started/quick-start) npm install vuetify@next
+- [Firebase](https://firebase.google.com/) npm install firebase --save
+- [Vuex State](https://github.com/robinvdvleuten/vuex-persistedstate) npm install vuex-persistedstate -- save
+- [Transform Async to Module Method](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-async-to-generator) npm install babel-plugin-transform-async-to-generator  --save
+- [Babel Plugin Transform Object-Rest-Spread](https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread) npm babel-plugin-transform-object-rest-spread --save
 
 
 
-## Project Completion Status
-- [x] Added centralized mixins, diretives, filters, utilities - `Start Date: 08/10/2017 - End Date: 08/10/2017`
-- [x] Refactoring on Vuex storage - `Start Date: 21/09/2017 - End Date: 22/09/2017`
-- [x] Cleaning Homepage - `Start Date: 21/09/2017 - End Date: 24/9/2017`
-- [x] Adding development Branch  - `Start Date: 20/09/2017 - End Date: 24/9/2017`
-- [X] Deploying to Firebase - `"Start Date:": 21/09/2017 - End Date: 21/09/2017:`
-- [x] Project upgrade added with unit test - `Start Date: 20/09/2017 - End Date: 21/09/2017`
-- [X] Merging old Template - `Start Date: 21/09/2017 - End Date: 21/09/2017`
-- [x] Synchronizing Storage and Vuex state - `Start Date: 15/09/2017 - End Date: 21/09/2017`
-- [x] Adding "Activity Board" menu - `Start Date: 15/09/2017 - End Date: 21/09/2017`
-
-
-## Project Plan  
-- [ ] Full Functional CRM - `Plan Date: 21/9/2017`
-- [ ] Full Calender/Event Scheduling - `Plan Date: 21/9/2017`
-- [ ] Quotation component - `Plan Date: 21/9/2017`
-- [ ] Synchronize with other plaform - Electron and Vue Electron `Plan Date: 21/9/2017`
-- [ ] Synchronize with other plaform - Quassar Framework - `Plan Date: 21/9/2017`
-
-
-## Dependencies Installed
-- [Algolia Places](https://github.com/algolia/places)
+plan 
+- [Vue Class Component](https://github.com/vuejs/vue-class-component) npm install --save-dev eslint eslint-plugin-vue
+- [Vue Rx](https://github.com/vuejs/vue-rx) npm install vue vue-rx rxjs --save
+- [Vuex Router Sync](https://github.com/vuejs/vuex-router-sync) npm install vuex-router-sync
+- [Vuex Shared Mutation](https://github.com/xanf/vuex-shared-mutations) npm install vuex-shared-mutations --save
+- [Localization Plugin](https://github.com/dkfbasel/vuex-i18n) npm install vuex-i18n --save
+- [Vuex Loading](https://github.com/f/vuex-loading) npm install vuex-loading --save 
+- [Vuex Cache Action](https://github.com/superwf/vuex-cache) npm install vuex-cache --save 
+- [JS Cookie](https://github.com/js-cookie/js-cookie) npm install --save js-cookie
 
 
 
